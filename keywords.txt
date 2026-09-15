@@ -1,0 +1,38 @@
+#######################################
+# Syntax Coloring Map For TempestTCode
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+TCode	KEYWORD1
+Axis	KEYWORD1
+InputType	KEYWORD1
+MoveStyle	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+addAxis	KEYWORD2
+getPosition	KEYWORD2
+getVelocity	KEYWORD2
+getLast	KEYWORD2
+byteInput	KEYWORD2
+stringInput	KEYWORD2
+stopAll	KEYWORD2
+prepAxis	KEYWORD2
+setAxis	KEYWORD2
+setPos	KEYWORD2
+stop	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+SHORT	LITERAL1
+SPEED	LITERAL1
+INTERVAL	LITERAL1
+RAMPED	LITERAL1
+EASE_IN	LITERAL1
+EASE_OUT	LITERAL1
+EASE_BOTH	LITERAL1
+GRADIENT	LITERAL1
