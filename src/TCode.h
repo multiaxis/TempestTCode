@@ -53,7 +53,7 @@ public:
     int32_t getVelocity(char letter, uint8_t index, int perInterval = 100) const;
     int32_t getVelocity(const char* channel, int perInterval = 100) const;
 
-    // Get current velocity of any axis
+    // Get time of last axis command recieved of any axis
     unsigned long getLast(char letter, uint8_t index) const;
     unsigned long getLast(const char* channel) const;
 
