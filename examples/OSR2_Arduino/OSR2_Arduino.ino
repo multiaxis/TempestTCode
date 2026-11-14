@@ -169,23 +169,23 @@ void loop() {
 
   // Mix and send servo channels
   // Linear scale inputs to servo appropriate numbers
-  int stroke,roll,pitch,valve,twist;
-  stroke = map(xLin,0,9999,-350,350);
-  roll   = map(yRot,0,9999,-180,180);
-  pitch  = map(zRot,0,9999,-350,350);
-  twist  = map(xRot,0,9999,1000,-1000);
-  if (REVERSE_TWIST_SERVO) { twist = -twist; }
-  valve  = map(valveCmd,0,9999,-500,500);
-  valve  = constrain(valve, -500, 500);
-  if (REVERSE_VALVE_SERVO) { valve = -valve; }
+  int strokeCmd,rollCmd,pitchCmd,valveCmd,twistCmd;
+  strokeCmd = map(xLin,0,9999,-350,350);
+  rollCmd   = map(yRot,0,9999,-180,180);
+  pitchCmd  = map(zRot,0,9999,-350,350);
+  twistCmd  = map(xRot,0,9999,1000,-1000);
+  if (REVERSE_TWIST_SERVO) { twistCmd = -twistCmd; }
+  valveCmd  = map(valveCmd,0,9999,-500,500);
+  valveCmd  = constrain(valveCmd, -500, 500);
+  if (REVERSE_VALVE_SERVO) { valveCmd = -valveCmd; }
 
   // Set servo output values
   // Note: 1000 = -45deg, 2000 = +45deg
-  LeftServo.writeMicroseconds(LeftServo_ZERO + stroke + roll);
-  RightServo.writeMicroseconds(RightServo_ZERO - stroke + roll);
-  PitchServo.writeMicroseconds(PitchServo_ZERO - pitch);
-  TwistServo.writeMicroseconds(TwistServo_ZERO + twist);
-  ValveServo.writeMicroseconds(ValveServo_ZERO + valve);
+  LeftServo.writeMicroseconds(LeftServo_ZERO + strokeCmd + rollCmd);
+  RightServo.writeMicroseconds(RightServo_ZERO - strokeCmd + rollCmd);
+  PitchServo.writeMicroseconds(PitchServo_ZERO - pitchCmd);
+  TwistServo.writeMicroseconds(TwistServo_ZERO + twistCmd);
+  ValveServo.writeMicroseconds(ValveServo_ZERO + valveCmd);
   // Done with servo channels
 
   // Set vibe outputs - via helper function defined below
